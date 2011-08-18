@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Test</title>
+</head>
+
+<body>
+  <center style='margin-top:100;'> 
+	  <span id='online-num' style='font-size:400;'></span>
+	</center>
+
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type="text/javascript" charset="utf-8"></script>
+	<script src='http://localhost:9393/socket.io/socket.io.js' type="text/javascript" charset="utf-8"></script>
+
+  <script>
+    jQuery(function($){
+      var onlineNumElement = $('#online-num');
+
+      var socket = io.connect('http://localhost:9393'); 
+
+      socket.on('connect', function() {
+				socket.emit('set client type', 'admin');
+      });
+
+      socket.on('stats.get', function (data) {
+	      console.log(data);
+				onlineNumElement.html(data.onlineNum);
+      });
+		});
+  </script>
+</body>
+</html>

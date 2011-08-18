@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>hello!</h1>
+
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+	<script src='http://localhost:9393/socket.io/socket.io.js' type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript"> 
+    (function() {
+			var a  = document.createElement('script'); 
+			a.type = 'text/javascript'; 
+			a.src  = 'siteCounter.js';
+			var s  = document.getElementsByTagName('script')[0]; 
+			s.parentNode.insertBefore(a, s);
+			console.log(s, s.parentNode);
+		})();
+	</script> 
+
+</body>
+</html>
